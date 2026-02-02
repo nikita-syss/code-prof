@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разработчикам - Gamemai</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo.png" alt="Gamemai" class="logo-img" width="106" height="102">
+                    </a>
+                </div>
+
+                <div class="catalog-section">
+                    <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог">
+                        <span class="catalog-btn-icon">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </button>
+                    <div class="catalog-text">Каталог</div>
+                </div>
+
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Поиск игр..." id="searchInput">
+                    <button class="search-btn" aria-label="Найти" id="searchBtn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="profile-section">
+                    <a href="profile.html" class="profile-btn" aria-label="Профиль пользователя">
+                        <i class="fas fa-user profile-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Каталог модалка -->
+<!-- Каталог модалка -->
+<div class="catalog-modal" id="catalogModal">
+    <div class="catalog-modal-content">
+        <div class="catalog-modal-header">
+            <h3><i class="fas fa-bars"></i> Меню</h3>
+            <button class="catalog-modal-close" id="catalogModalClose">&times;</button>
+        </div>
+        <div class="catalog-modal-links">
+            <a href="about.html" class="catalog-link">
+                <i class="fas fa-info-circle"></i>
+                <span>О нас</span>
+            </a>
+            <a href="contacts.html" class="catalog-link">
+                <i class="fas fa-address-book"></i>
+                <span>Контакты</span>
+            </a>
+            <a href="profile.html" class="catalog-link">
+                <i class="fas fa-user-circle"></i>
+                <span>Профиль</span>
+            </a>
+            <a href="developers.html" class="catalog-link">
+                <i class="fas fa-code"></i>
+                <span>Разработчикам</span>
+            </a>
+            <a href="authors.html" class="catalog-link">
+                <i class="fas fa-pen-nib"></i>
+                <span>Авторам</span>
+            </a>
+            <a href="investors.html" class="catalog-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Инвестиции</span>
+            </a>
+            <a href="advertising.html" class="catalog-link">
+                <i class="fas fa-bullhorn"></i>
+                <span>Реклама</span>
+            </a>
+            <a href="support.html" class="catalog-link">
+                <i class="fas fa-headset"></i>
+                <span>Поддержка</span>
+            </a>
+            <a href="privacy.html" class="catalog-link">
+                <i class="fas fa-shield-alt"></i>
+                <span>Конфиденциальность</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-content">
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <span>/</span>
+                <span>Разработчикам</span>
+            </div>
+        </div>
+
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-code"></i> Разработчикам
+                </h1>
+                <p class="page-subtitle">Публикуйте свои игры на Gamemai и достигайте миллионов игроков по всему миру</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="info-card">
+                    <h2><i class="fas fa-rocket"></i> Публикация игр на платформе</h2>
+                    <p>Gamemai предоставляет разработчикам уникальную возможность публиковать и распространять свои игры через нашу платформу. Мы предлагаем полный цикл поддержки: от технической интеграции до маркетинга и монетизации.</p>
+                    
+                    <h3><i class="fas fa-cogs"></i> Как начать</h3>
+                    <ul class="advantages-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Регистрация в партнерской программе</h4>
+                                <p>Создайте аккаунт разработчика и подайте заявку на публикацию игры</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Техническая интеграция</h4>
+                                <p>Используйте наш SDK для быстрой интеграции с платформой Gamemai</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Модерация и публикация</h4>
+                                <p>Наша команда проверит игру и поможет с оптимизацией для платформы</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Запуск и продвижение</h4>
+                                <p>Мы поможем с маркетингом и продвижением вашей игры среди нашей аудитории</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-percentage"></i> Монетизация и доходы</h2>
+                    <p>Мы предлагаем одни из лучших условий на рынке для разработчиков игр. Наша система монетизации позволяет максимизировать доходы от ваших проектов.</p>
+                    
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>Высокие роялти</h3>
+                            <p>До 85% от стоимости каждой продажи возвращается разработчику</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Гибкая монетизация</h3>
+                            <p>Поддержка различных моделей: продажи, подписки, микротранзакции</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Глобальный охват</h3>
+                            <p>Доступ к миллионам игроков в более чем 150 странах мира</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-tools"></i> Инструменты для разработчиков</h2>
+                    <p>Мы предоставляем современные инструменты для упрощения разработки и публикации игр.</p>
+                    
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Инструмент</th>
+                                <th>Описание</th>
+                                <th>Доступность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="fas fa-code"></i> Gamemai SDK</td>
+                                <td>Набор инструментов для интеграции с платформой</td>
+                                <td><span class="badge-success">Бесплатно</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-chart-bar"></i> Аналитика</td>
+                                <td>Детальная статистика по продажам и игрокам</td>
+                                <td><span class="badge-success">Включено</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-cloud-upload-alt"></i> Система обновлений</td>
+                                <td>Автоматическое обновление игр у пользователей</td>
+                                <td><span class="badge-success">Включено</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-shield-alt"></i> Антипиратство</td>
+                                <td>Защита от нелегального распространения</td>
+                                <td><span class="badge-success">Включено</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-file-signature"></i> Подать заявку на публикацию</h2>
+                    <p>Готовы опубликовать свою игру на Gamemai? Заполните форму ниже, и наша команда свяжется с вами в течение 24 часов.</p>
+                    
+                    <form class="page-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="devName">Ваше имя</label>
+                                <input type="text" id="devName" placeholder="Введите ваше имя" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="devEmail">Email</label>
+                                <input type="email" id="devEmail" placeholder="Введите ваш email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Название студии (если есть)</label>
+                                <input type="text" id="companyName" placeholder="Название вашей студии">
+                            </div>
+                            <div class="form-group">
+                                <label for="gameName">Название игры</label>
+                                <input type="text" id="gameName" placeholder="Название вашей игры" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gameDescription">Описание игры</label>
+                            <textarea id="gameDescription" placeholder="Опишите вашу игру, её особенности и геймплей" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="platforms">Платформы</label>
+                            <select id="platforms" multiple>
+                                <option value="pc">PC (Windows)</option>
+                                <option value="mac">Mac</option>
+                                <option value="linux">Linux</option>
+                                <option value="android">Android</option>
+                                <option value="ios">iOS</option>
+                            </select>
+                            <small>Удерживайте Ctrl (Cmd на Mac) для выбора нескольких вариантов</small>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Отправить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="index.html" class="footer-logo-link">
+                            <img src="img/logo.png" alt="Gamemai">
+                            <div class="footer-logo-text">
+                                <h3>Gamemai</h3>
+                                <p>Игровой магазин нового поколения</p>
+                            </div>
+                        </a>
+                        <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+                    </div>
+                    
+                    <div class="footer-business">
+                        <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
+                        <div class="business-links">
+                            <a href="developers.html">
+                                <i class="fas fa-code"></i>
+                                <span>Разработчикам</span>
+                                <small>Публикация игр</small>
+                            </a>
+                            <a href="authors.html">
+                                <i class="fas fa-pen-nib"></i>
+                                <span>Авторам</span>
+                                <small>Контент и обзоры</small>
+                            </a>
+                            <a href="investors.html">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Инвесторам</span>
+                                <small>Инвестиции и партнерство</small>
+                            </a>
+                            <a href="advertising.html">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Реклама</span>
+                                <small>Продвижение на платформе</small>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <h4><i class="fas fa-info-circle"></i> Информация</h4>
+                        <div class="info-links">
+                            <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
+                            <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
+                            <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
+                            <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+                            <a href="terms.html"><i class="fas fa-file-contract"></i> Пользовательское соглашение</a>
+                            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p class="footer-copyright">
+                            <i class="far fa-copyright"></i> 2023 Gamemai. Все права защищены.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/modals.js"></script>
+    <script>
+        // Функция для поиска игр
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.trim();
+            
+            if (searchTerm) {
+                alert(`Поиск: ${searchTerm}`);
+                // В реальном приложении здесь будет переход на страницу поиска
+                // window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+
+        // Обработчики событий для поиска
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            
+            if (searchBtn) {
+                searchBtn.addEventListener('click', performSearch);
+            }
+            
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

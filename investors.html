@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвесторам - Gamemai</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo.png" alt="Gamemai" class="logo-img" width="106" height="102">
+                    </a>
+                </div>
+
+                <div class="catalog-section">
+                    <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог">
+                        <span class="catalog-btn-icon">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </button>
+                    <div class="catalog-text">Каталог</div>
+                </div>
+
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Поиск игр..." id="searchInput">
+                    <button class="search-btn" aria-label="Найти" id="searchBtn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="profile-section">
+                    <a href="profile.html" class="profile-btn" aria-label="Профиль пользователя">
+                        <i class="fas fa-user profile-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Каталог модалка -->
+<!-- Каталог модалка -->
+<div class="catalog-modal" id="catalogModal">
+    <div class="catalog-modal-content">
+        <div class="catalog-modal-header">
+            <h3><i class="fas fa-bars"></i> Меню</h3>
+            <button class="catalog-modal-close" id="catalogModalClose">&times;</button>
+        </div>
+        <div class="catalog-modal-links">
+            <a href="about.html" class="catalog-link">
+                <i class="fas fa-info-circle"></i>
+                <span>О нас</span>
+            </a>
+            <a href="contacts.html" class="catalog-link">
+                <i class="fas fa-address-book"></i>
+                <span>Контакты</span>
+            </a>
+            <a href="profile.html" class="catalog-link">
+                <i class="fas fa-user-circle"></i>
+                <span>Профиль</span>
+            </a>
+            <a href="developers.html" class="catalog-link">
+                <i class="fas fa-code"></i>
+                <span>Разработчикам</span>
+            </a>
+            <a href="authors.html" class="catalog-link">
+                <i class="fas fa-pen-nib"></i>
+                <span>Авторам</span>
+            </a>
+            <a href="investors.html" class="catalog-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Инвестиции</span>
+            </a>
+            <a href="advertising.html" class="catalog-link">
+                <i class="fas fa-bullhorn"></i>
+                <span>Реклама</span>
+            </a>
+            <a href="support.html" class="catalog-link">
+                <i class="fas fa-headset"></i>
+                <span>Поддержка</span>
+            </a>
+            <a href="privacy.html" class="catalog-link">
+                <i class="fas fa-shield-alt"></i>
+                <span>Конфиденциальность</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-content">
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <span>/</span>
+                <span>Инвесторам</span>
+            </div>
+        </div>
+
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-chart-line"></i> Инвесторам
+                </h1>
+                <p class="page-subtitle">Инвестируйте в будущее игровой индустрии с Gamemai - лидирующей платформой для дистрибуции игр</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="info-card">
+                    <h2><i class="fas fa-handshake"></i> Инвестиционные возможности</h2>
+                    <p>Gamemai предлагает уникальные возможности для инвестиций в быстрорастущий рынок цифровой дистрибуции игр. Мы ищем стратегических партнеров и инвесторов для совместного роста и развития платформы.</p>
+                    
+                    <h3><i class="fas fa-bullseye"></i> Наши цели и стратегия</h3>
+                    <ul class="advantages-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Глобальная экспансия</h4>
+                                <p>Расширение присутствия на рынках Азии, Европы и Северной Америки</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Технологическое развитие</h4>
+                                <p>Инвестиции в облачные технологии, AI и улучшение пользовательского опыта</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Приобретение студий</h4>
+                                <p>Стратегические инвестиции в перспективные игровые студии</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Мобильная экспансия</h4>
+                                <p>Развитие мобильного направления и облачного гейминга</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-chart-pie"></i> Финансовые показатели</h2>
+                    <p>Gamemai демонстрирует устойчивый рост и привлекательные финансовые показатели для инвесторов.</p>
+                    
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Годовой рост</h3>
+                            <p>+150% годового роста выручки за последние 3 года</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Активная аудитория</h3>
+                            <p>Более 5 миллионов активных пользователей ежемесячно</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>Каталог игр</h3>
+                            <p>10,000+ игр в каталоге, 500+ новых релизов ежегодно</p>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <h3>География</h3>
+                            <p>Присутствие в 150+ странах с поддержкой 40+ языков</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-money-bill-trend-up"></i> Инвестиционные раунды</h2>
+                    <p>В настоящее время мы проводим серию C инвестиционный раунд для ускорения нашего роста и реализации стратегических инициатив.</p>
+                    
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Инвестиционный раунд</th>
+                                <th>Цель привлечения</th>
+                                <th>Оценка компании</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="fas fa-seedling"></i> Seed Round</td>
+                                <td>Разработка MVP и запуск платформы</td>
+                                <td>$5M</td>
+                                <td><span class="badge-completed">Завершен</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-leaf"></i> Серия A</td>
+                                <td>Расширение команды и маркетинг</td>
+                                <td>$20M</td>
+                                <td><span class="badge-completed">Завершен</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-tree"></i> Серия B</td>
+                                <td>Международная экспансия</td>
+                                <td>$50M</td>
+                                <td><span class="badge-completed">Завершен</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-chart-line"></i> Серия C</td>
+                                <td>Технологическое развитие и M&A</td>
+                                <td>$100M+</td>
+                                <td><span class="badge-active">Текущий раунд</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-file-invoice-dollar"></i> Презентация для инвесторов</h2>
+                    <p>Для получения подробной информации об инвестиционных возможностях, пожалуйста, оставьте свои контактные данные. Наша команда по работе с инвесторами свяжется с вами и предоставит полную инвестиционную презентацию.</p>
+                    
+                    <form class="page-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="investorName">Ваше имя</label>
+                                <input type="text" id="investorName" placeholder="Введите ваше имя" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="investorTitle">Должность/Роль</label>
+                                <input type="text" id="investorTitle" placeholder="Например: Партнер фонда" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Название компании/фонда</label>
+                                <input type="text" id="companyName" placeholder="Название вашей организации" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="investorEmail">Рабочий email</label>
+                                <input type="email" id="investorEmail" placeholder="Введите ваш рабочий email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="investmentSize">Интересующий размер инвестиций</label>
+                                <select id="investmentSize">
+                                    <option value="">Выберите диапазон</option>
+                                    <option value="small">$100,000 - $500,000</option>
+                                    <option value="medium">$500,000 - $2,000,000</option>
+                                    <option value="large">$2,000,000 - $10,000,000</option>
+                                    <option value="xlarge">Более $10,000,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="investmentType">Тип инвестиций</label>
+                                <select id="investmentType" multiple>
+                                    <option value="equity">Акции (Equity)</option>
+                                    <option value="debt">Долговое финансирование (Debt)</option>
+                                    <option value="convertible">Конвертируемые облигации</option>
+                                    <option value="strategic">Стратегическое партнерство</option>
+                                </select>
+                                <small>Удерживайте Ctrl (Cmd на Mac) для выбора нескольких вариантов</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investorMessage">Дополнительная информация</label>
+                            <textarea id="investorMessage" placeholder="Расскажите о вашем фонде, инвестиционной стратегии и интересе к Gamemai"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-file-download"></i> Запросить презентацию
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="index.html" class="footer-logo-link">
+                            <img src="img/logo.png" alt="Gamemai">
+                            <div class="footer-logo-text">
+                                <h3>Gamemai</h3>
+                                <p>Игровой магазин нового поколения</p>
+                            </div>
+                        </a>
+                        <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+                    </div>
+                    
+                    <div class="footer-business">
+                        <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
+                        <div class="business-links">
+                            <a href="developers.html">
+                                <i class="fas fa-code"></i>
+                                <span>Разработчикам</span>
+                                <small>Публикация игр</small>
+                            </a>
+                            <a href="authors.html">
+                                <i class="fas fa-pen-nib"></i>
+                                <span>Авторам</span>
+                                <small>Контент и обзоры</small>
+                            </a>
+                            <a href="investors.html">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Инвесторам</span>
+                                <small>Инвестиции и партнерство</small>
+                            </a>
+                            <a href="advertising.html">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Реклама</span>
+                                <small>Продвижение на платформе</small>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <h4><i class="fas fa-info-circle"></i> Информация</h4>
+                        <div class="info-links">
+                            <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
+                            <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
+                            <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
+                            <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+                            <a href="terms.html"><i class="fas fa-file-contract"></i> Пользовательское соглашение</a>
+                            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p class="footer-copyright">
+                            <i class="far fa-copyright"></i> 2023 Gamemai. Все права защищены.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/modals.js"></script>
+    <script>
+        // Функция для поиска игр
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.trim();
+            
+            if (searchTerm) {
+                // Здесь можно реализовать поиск
+                alert(`Поиск: ${searchTerm}`);
+                // В реальном приложении здесь будет переход на страницу поиска
+                // window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+
+        // Обработчики событий для поиска
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            
+            if (searchBtn) {
+                searchBtn.addEventListener('click', performSearch);
+            }
+            
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

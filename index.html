@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamemai - Игровой магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src=img/logo.png t="Gamemai" class="logo-img" width="106" height="102">
+                </a>
+            </div>
+
+            <div class="catalog-section">
+                <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог">
+                    <span class="catalog-btn-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="catalog-text">Каталог</div>
+            </div>
+
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Поиск игр...">
+                <button class="search-btn" aria-label="Найти">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="profile-section">
+                <button class="profile-btn" id="profileBtn" aria-label="Профиль пользователя">
+                    <i class="fas fa-user profile-icon"></i>
+                </button>
+            </div>
+
+            <div class="auth-section">
+                <button class="auth-btn login-btn" id="loginBtn">
+                    <span class="auth-text">Вход</span>
+                    <span class="auth-enter"><i class="fas fa-sign-in-alt"></i></span>
+                </button>
+                <button class="auth-btn register-btn" id="registerBtn">
+                    <span class="auth-text">Регистрация</span>
+                    <span class="auth-enter"><i class="fas fa-user-plus"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="catalog-modal" id="catalogModal">
+        <div class="catalog-modal-content">
+            <div class="catalog-modal-header">
+                <h3><i class="fas fa-bars"></i> Каталог Gamemai</h3>
+                <button class="catalog-modal-close" id="catalogModalClose">&times;</button>
+            </div>
+            <div class="catalog-modal-links">
+                <a href="about.html" class="catalog-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>О нас</span>
+                </a>
+                <a href="contacts.html" class="catalog-link">
+                    <i class="fas fa-address-book"></i>
+                    <span>Контакты</span>
+                </a>
+                <a href="profile.html" class="catalog-link">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Профиль</span>
+                </a>
+                <a href="developers.html" class="catalog-link">
+                    <i class="fas fa-code"></i>
+                    <span>Разработчикам</span>
+                </a>
+                <a href="authors.html" class="catalog-link">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>Авторам</span>
+                </a>
+                <a href="investors.html" class="catalog-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Инвестиции</span>
+                </a>
+                <a href="advertising.html" class="catalog-link">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Реклама</span>
+                </a>
+                <a href="support.html" class="catalog-link">
+                    <i class="fas fa-headset"></i>
+                    <span>Поддержка</span>
+                </a>
+                <a href="privacy.html" class="catalog-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Конфиденциальность</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-content">
+            <div class="auth-modal-header">
+                <h3 id="authModalTitle"><i class="fas fa-user"></i> Вход в Gamemai</h3>
+                <button class="auth-modal-close" id="authModalClose">&times;</button>
+            </div>
+            <div class="auth-modal-tabs">
+                <button class="auth-tab active" data-tab="login">
+                    <i class="fas fa-sign-in-alt"></i> Вход
+                </button>
+                <button class="auth-tab" data-tab="register">
+                    <i class="fas fa-user-plus"></i> Регистрация
+                </button>
+            </div>
+            
+            <form class="auth-form active" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="loginEmail" placeholder="Введите ваш email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Пароль</label>
+                    <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked>
+                        <span>Запомнить меня</span>
+                    </label>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Войти в аккаунт
+                </button>
+                <div class="auth-divider">
+                    <span>или войдите через</span>
+                </div>
+                <div class="social-auth">
+                    <button type="button" class="social-btn vk-btn">
+                        <i class="fab fa-vk"></i> ВКонтакте
+                    </button>
+                    <button type="button" class="social-btn google-btn">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                </div>
+            </form>
+            
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label for="registerName"><i class="fas fa-user"></i> Имя пользователя</label>
+                    <input type="text" id="registerName" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="registerEmail" placeholder="Введите ваш email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword"><i class="fas fa-lock"></i> Пароль</label>
+                    <input type="password" id="registerPassword" placeholder="Придумайте пароль" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword"><i class="fas fa-lock"></i> Подтвердите пароль</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Повторите пароль" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>Я согласен с <a href="terms.html">правилами</a> и <a href="privacy.html">политикой конфиденциальности</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fas fa-user-plus"></i> Создать аккаунт
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="games-slider">
+            <div class="container">
+                <div class="slider-container">
+                    <div class="slider-header">
+                        <h2 class="slider-title">
+                            <i class="fas fa-fire"></i> Популярные игры
+                        </h2>
+                        <div class="slider-counter">
+                            <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-with-buttons">
+                        <button class="slider-nav-btn prev-btn" aria-label="Предыдущий слайд">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div id="sliderWrapper">
+                        </div>
+                        
+                        <button class="slider-nav-btn next-btn" aria-label="Следующий слайд">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="slider-indicators" id="indicatorsContainer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us-section">
+            <div class="container">
+                <div class="why-us-container">
+                    <div class="why-us-content">
+                        <h2 class="why-us-title">
+                            <i class="fas fa-star"></i> Почему выбирают Gamemai?
+                        </h2>
+                        <ol class="why-us-list">
+                            <li>
+                                <span class="why-us-number">1</span>
+                                <div class="why-us-item">
+                                    <h3><i class="fas fa-tag"></i> Привлекательные цены</h3>
+                                    <p>Мы предлагаем лучшие цены на рынке игровых товаров с гарантией возврата средств</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="why-us-number">2</span>
+                                <div class="why-us-item">
+                                    <h3><i class="fas fa-percentage"></i> Лучшие акции</h3>
+                                    <p>Постоянные скидки до 90%, специальные предложения и сезонные распродажи</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="why-us-number">3</span>
+                                <div class="why-us-item">
+                                    <h3><i class="fas fa-headset"></i> Поддержка 24/7</h3>
+                                    <p>Круглосуточная служба поддержки на русском языке для наших клиентов</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="why-us-number">4</span>
+                                <div class="why-us-item">
+                                    <h3><i class="fas fa-bolt"></i> Быстрая покупка</h3>
+                                    <p>Мгновенная доставка ключей после оплаты. Без ожидания, сразу в игру!</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="genre-search-block">
+                        <h3 class="genre-search-title">
+                            <i class="fas fa-search"></i> Поиск по жанрам
+                        </h3>
+                        <p class="genre-search-subtitle">Найдите игру по вашему любимому жанру среди 10,000+ игр</p>
+                        
+                        <div class="genre-search-form">
+                            <div class="search-input-group">
+                                <i class="fas fa-search genre-search-icon"></i>
+                                <input type="text" class="genre-search-input" id="genreSearchInput" placeholder="Введите жанр...">
+                                <button class="genre-search-btn" id="genreSearchBtn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="popular-genres">
+                                <h4><i class="fas fa-hashtag"></i> Популярные жанры:</h4>
+                                <div class="genre-tags">
+                                    <button class="genre-tag" data-genre="стратегии">
+                                        <i class="fas fa-chess"></i> Стратегии
+                                    </button>
+                                    <button class="genre-tag" data-genre="рпг">
+                                        <i class="fas fa-dragon"></i> РПГ
+                                    </button>
+                                    <button class="genre-tag" data-genre="ммо">
+                                        <i class="fas fa-users"></i> ММО
+                                    </button>
+                                    <button class="genre-tag" data-genre="шутеры">
+                                        <i class="fas fa-crosshairs"></i> Шутеры
+                                    </button>
+                                    <button class="genre-tag" data-genre="экшен">
+                                        <i class="fas fa-running"></i> Экшен
+                                    </button>
+                                    <button class="genre-tag" data-genre="приключения">
+                                        <i class="fas fa-hiking"></i> Приключения
+                                    </button>
+                                    <button class="genre-tag" data-genre="гонки">
+                                        <i class="fas fa-flag-checkered"></i> Гонки
+                                    </button>
+                                    <button class="genre-tag" data-genre="симуляторы">
+                                        <i class="fas fa-gamepad"></i> Симуляторы
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-games">
+            <div class="container">
+                <h2 class="popular-title"></h2>
+                
+                <div class="popular-games-grid" id="popularGamesGrid">
+                </div>
+                
+                <div class="view-all-container">
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="partners-title">
+                </h2>
+
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img src="img/1c.png" alt="1C Game Studios">
+                        </div>
+                        <div class="partner-content">
+                            <h3><i class="fas fa-gamepad"></i> 1C Game Studios</h3>
+                            <p>Разрабатываем и издаем игры по всему миру. Наши игры, Боевой законопулятор — историческая реконструкция авиации эпохи Первой мировой войны.</p>
+                            <div class="partner-tags">
+                                <span class="partner-tag">Разработка</span>
+                                <span class="partner-tag">Издание</span>
+                                <span class="partner-tag">Публикация</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img src="img/max.png" alt="Макс">
+                        </div>
+                        <div class="partner-content">
+                            <h3><i class="fas fa-comments"></i> Макс</h3>
+                            <p>Российский проектматформенный сервис империи сообщениями на базе одномоменной цифровой системы. Обновка в 2025 году, технологический компонент разрабатывается её доверной структурой ООО «Коммуникационная платформа».</p>
+                            <div class="partner-tags">
+                                <span class="partner-tag">Коммуникации</span>
+                                <span class="partner-tag">Технологии</span>
+                                <span class="partner-tag">Платформа</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="img/logo.png" alt="Gamemai">
+                        <div class="footer-logo-text">
+                            <h3>Gamemai</h3>
+                            <p>Игровой магазин нового поколения</p>
+                        </div>
+                    </a>
+                    <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+                </div>
+                
+                <div class="footer-business">
+                    <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
+                    <div class="business-links">
+                        <a href="developers.html">
+                            <i class="fas fa-code"></i>
+                            <span>Разработчикам</span>
+                            <small>Публикация игр</small>
+                        </a>
+                        <a href="authors.html">
+                            <i class="fas fa-pen-nib"></i>
+                            <span>Авторам</span>
+                            <small>Контент и обзоры</small>
+                        </a>
+                        <a href="investors.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Инвесторам</span>
+                            <small>Инвестиции и партнерство</small>
+                        </a>
+                        <a href="advertising.html">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Реклама</span>
+                            <small>Продвижение на платформе</small>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <h4><i class="fas fa-info-circle"></i> Информация</h4>
+                    <div class="info-links">
+                        <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
+                        <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
+                        <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
+                        <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+                        <a href="terms.html"><i class="fas fa-file-contract"></i> Пользовательское соглашение</a>
+                        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                    </div>
+                </div>
+            </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/modals.js"></script>
+</body>
+</html>
