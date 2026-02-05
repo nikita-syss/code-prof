@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Инициализация кнопок в каталоге
-    initCatalogLinks();
-    
     // Инициализация социальных кнопок входа
     initSocialAuth();
     
@@ -9,40 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initPasswordValidation();
 });
 
-function initCatalogLinks() {
-    const catalogLinks = document.querySelectorAll('.catalog-link');
-    
-    catalogLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const catalogModal = document.getElementById('catalogModal');
-            if (catalogModal) {
-                catalogModal.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            }
-            const pageName = this.querySelector('span')?.textContent || 'страницу';
-            showNotification(`Переходим на ${pageName}...`, 'info');
-            setTimeout(() => {
-                showNotification('Страница находится в разработке', 'info');
-            }, 1000);
-        });
-    });
-}
-
 function initSocialAuth() {
     const socialButtons = document.querySelectorAll('.social-btn');
     
     socialButtons.forEach(button => {
         button.addEventListener('click', function() {
             const provider = this.classList.contains('vk-btn') ? 'ВКонтакте' : 'Google';
-            const originalHTML = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Подключение...';
-            this.disabled = true;
-            setTimeout(() => {
-                this.innerHTML = originalHTML;
-                this.disabled = false;
-                
-                showNotification(`Авторизация через ${provider} временно недоступна. Используйте стандартную регистрацию.`, 'warning');
-            }, 1500);
+            
+            showNotification(`Авторизация через ${provider} временно недоступна. Используйте стандартную регистрацию.`, 'warning');
         });
     });
 }
@@ -57,7 +28,6 @@ function initPasswordValidation() {
             validatePasswordStrength(this.value);
         });
         
-        
         confirmInput.addEventListener('input', function() {
             validatePasswordMatch(passwordInput.value, this.value);
         });
@@ -71,12 +41,10 @@ function validatePasswordStrength(password) {
     let message = '';
     let color = '#ff6b6b'; 
     
-    
     if (password.length >= 8) strength++;
     if (/[A-Z]/.test(password)) strength++;
     if (/[0-9]/.test(password)) strength++;
     if (/[^A-Za-z0-9]/.test(password)) strength++;
-    
     
     switch(strength) {
         case 0:
@@ -97,7 +65,6 @@ function validatePasswordStrength(password) {
             color = '#2b8a3e';
             break;
     }
-    
     
     strengthIndicator.innerHTML = `
         <div class="strength-bar">
@@ -169,7 +136,6 @@ function initForgotPassword() {
     forgotLink.addEventListener('click', function(e) {
         e.preventDefault();
         
-        
         showPasswordRecoveryModal();
     });
 }
@@ -196,9 +162,7 @@ function showPasswordRecoveryModal() {
         </div>
     `;
     
-    
     document.body.insertAdjacentHTML('beforeend', modalHTML);
-    
     
     const recoveryModal = document.getElementById('recoveryModal');
     const recoveryModalClose = document.getElementById('recoveryModalClose');
@@ -216,7 +180,6 @@ function showPasswordRecoveryModal() {
         }
     });
     
-    
     recoveryForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const email = document.getElementById('recoveryEmail').value.trim();
@@ -233,13 +196,9 @@ function showPasswordRecoveryModal() {
         
         showNotification(`Инструкции по восстановлению отправлены на ${email}`, 'success');
         
-        
-        setTimeout(() => {
-            recoveryModal.remove();
-            document.body.style.overflow = 'auto';
-        }, 2000);
+        recoveryModal.remove();
+        document.body.style.overflow = 'auto';
     });
-    
     
     document.body.style.overflow = 'hidden';
 }
@@ -250,7 +209,6 @@ if (document.querySelector('.forgot-password')) {
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        initCatalogLinks,
         initSocialAuth,
         initPasswordValidation,
         validatePasswordStrength,

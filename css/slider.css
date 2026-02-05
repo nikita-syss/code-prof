@@ -1,14 +1,11 @@
 .games-slider {
-    margin-top: 40px;
-    background-color: #000000;
+    margin-top: 20px;
+    background-color: var(--bg);
 }
 
 .slider-container {
-    background-color: #000000 !important;
-    border-radius: 0;
+    background-color: var(--bg);
     padding: 0;
-    box-shadow: none;
-    border: none;
     position: relative;
 }
 
@@ -16,96 +13,81 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-    gap: 20px;
+    margin-bottom: 20px;
 }
 
 .slider-title {
-    font-size: 36px;
-    color: #fff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider-counter {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .slider-with-buttons {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     position: relative;
 }
 
 .slider-nav-btn {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid #333;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-lighter);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    color: #fff;
+    color: var(--text-primary);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    transition: all 0.3s ease;
+    font-size: 16px;
     flex-shrink: 0;
     z-index: 2;
-    backdrop-filter: blur(5px);
-}
-
-.slider-nav-btn:hover {
-    background-color: #4dabf7;
-    border-color: #4dabf7;
-    transform: scale(1.1);
 }
 
 #sliderWrapper {
     flex: 1;
     position: relative;
     overflow: hidden;
-    min-height: 500px;
-    border-radius: 15px;
-    background-color: #000000;
+    min-height: 300px;
+    border-radius: var(--border-radius);
+    background-color: var(--bg);
 }
 
 .slides-container {
     display: flex;
-    transition: transform 0.5s ease;
-    background-color: #000000;
+    background-color: var(--bg);
 }
 
 .slide {
     min-width: 100%;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
     display: none;
-    background-color: #000000;
+    background-color: var(--bg);
 }
 
 .slide.active {
-    opacity: 1;
-    transform: translateX(0);
     display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .game-card {
     display: flex;
-    background-color: #000000;
-    border-radius: 15px;
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
     overflow: hidden;
-    min-height: 500px;
-    border: 1px solid #333;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    min-height: 300px;
+    border: 1px solid var(--border-color);
 }
 
 .game-image {
-    flex: 0 0 50%;
+    flex: 0 0 40%;
     position: relative;
     overflow: hidden;
 }
@@ -114,134 +96,205 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s ease;
-}
-
-.game-card:hover .game-image img {
-    transform: scale(1.05);
 }
 
 .game-badge {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 20px;
+    top: 10px;
+    left: 10px;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     z-index: 2;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    background-color: #4dabf7;
-}
-
-.game-badge.NОВИНКА {
-    background-color: #4dabf7;
-}
-
-.game-badge.ПОПУЛЯРНАЯ {
-    background-color: #ff6b6b;
-}
-
-.game-badge.БЕСПЛАТНО {
-    background-color: #51cf66;
 }
 
 .game-content {
-    flex: 0 0 50%;
-    padding: 40px;
+    flex: 0 0 60%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    background-color: #000000;
+    background-color: var(--bg);
 }
 
 .game-title {
-    font-size: 36px;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 20px;
+    color: var(--text-primary);
+    margin-bottom: 5px;
 }
 
 .game-subtitle {
-    font-size: 24px;
-    color: #aaa;
-    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
     font-weight: normal;
 }
 
 .game-description {
-    font-size: 18px;
-    color: #ccc;
-    line-height: 1.7;
-    margin-bottom: 30px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
     flex-grow: 1;
 }
 
+.game-footer {
+    margin-top: auto;
+}
+
 .game-price {
-    font-size: 28px;
-    color: #4dabf7;
+    font-size: 20px;
+    color: var(--primary-color);
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .game-buy-btn {
-    background-color: #4dabf7;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: white;
     border: none;
-    border-radius: 10px;
-    padding: 15px 40px;
-    font-size: 20px;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    box-shadow: 0 4px 15px rgba(77, 171, 247, 0.3);
-}
-
-.game-buy-btn:hover {
-    background-color: #339af0;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(77, 171, 247, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
 }
 
 .slider-indicators {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-    background-color: #000000;
+    gap: 8px;
+    margin-top: 15px;
+    background-color: var(--bg);
 }
 
 .indicator {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background-color: #333;
-    border: none;
+    background-color: var(--bg-lighter);
+    border: 1px solid var(--border-color);
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .indicator.active {
-    background-color: #4dabf7;
-    transform: scale(1.3);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
+/* Светлая тема для слайдера */
+body.light-theme .games-slider {
+    background-color: var(--bg);
+}
+
+body.light-theme .slider-container {
+    background-color: var(--bg);
+}
+
+body.light-theme .slider-title {
+    color: var(--text-primary);
+}
+
+body.light-theme .slider-counter {
+    color: var(--text-secondary);
+}
+
+body.light-theme #sliderWrapper {
+    background-color: var(--bg);
+}
+
+body.light-theme .slides-container {
+    background-color: var(--bg);
+}
+
+body.light-theme .slide {
+    background-color: var(--bg);
+}
+
+body.light-theme .game-card {
+    background-color: var(--bg);
+    border-color: var(--border-color);
+}
+
+body.light-theme .game-content {
+    background-color: var(--bg);
+}
+
+body.light-theme .game-title {
+    color: var(--text-primary);
+}
+
+body.light-theme .game-subtitle {
+    color: var(--text-secondary);
+}
+
+body.light-theme .game-description {
+    color: var(--text-secondary);
+}
+
+body.light-theme .slider-nav-btn {
+    background-color: var(--bg-lighter);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body.light-theme .slider-indicators {
+    background-color: var(--bg);
+}
+
+body.light-theme .indicator {
+    background-color: var(--bg-lighter);
+    border-color: var(--border-color);
+}
+
+body.light-theme .indicator.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Адаптивность слайдера */
 @media (max-width: 992px) {
     .game-card {
         flex-direction: column;
+        min-height: auto;
     }
     
-    .game-image, .game-content {
+    .game-image,
+    .game-content {
         flex: 1;
     }
     
     .game-image {
-        height: 300px;
+        height: 200px;
     }
     
     .game-content {
-        padding: 25px;
+        padding: 15px;
+    }
+    
+    #sliderWrapper {
+        min-height: auto;
+    }
+    
+    .game-title {
+        font-size: 18px;
+    }
+    
+    .game-buy-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-title {
+        font-size: 20px;
     }
     
     .slider-with-buttons {
@@ -253,49 +306,118 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 3;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
     
     .prev-btn {
-        left: 10px;
+        left: 5px;
     }
     
     .next-btn {
-        right: 10px;
+        right: 5px;
     }
-}
-
-@media (max-width: 768px) {
-    .slider-title {
-        font-size: 28px;
+    
+    #sliderWrapper {
+        min-height: 250px;
+    }
+    
+    .game-image {
+        height: 150px;
+    }
+    
+    .game-content {
+        padding: 15px;
     }
     
     .game-title {
-        font-size: 28px;
-    }
-    
-    .game-description {
         font-size: 16px;
     }
     
-    .game-price {
-        font-size: 24px;
+    .game-subtitle {
+        font-size: 13px;
     }
     
-    .slider-nav-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
+    .game-description {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .game-price {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .game-buy-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    .indicator {
+        width: 6px;
+        height: 6px;
     }
 }
 
 @media (max-width: 480px) {
+    .slider-title {
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .slider-counter {
+        text-align: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+    
+    .slider-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
     .slider-nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    #sliderWrapper {
+        min-height: 200px;
+    }
+    
+    .game-image {
+        height: 120px;
     }
     
     .game-content {
-        padding: 20px;
+        padding: 12px;
+    }
+    
+    .game-title {
+        font-size: 14px;
+    }
+    
+    .game-subtitle {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .game-description {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .game-price {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .game-buy-btn {
+        padding: 6px 12px;
+        font-size: 11px;
     }
 }

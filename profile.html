@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Профиль пользователя - Gamemai</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo.png" alt="Gamemai" class="logo-img" width="106" height="102">
+                    </a>
+                </div>
+
+                <div class="catalog-section">
+                    <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог">
+                        <span class="catalog-btn-icon">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </button>
+                    <div class="catalog-text">Каталог</div>
+                </div>
+
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Поиск игр..." id="searchInput">
+                    <button class="search-btn" aria-label="Найти" id="searchBtn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="profile-section">
+                    <a href="profile.html" class="profile-btn" id="profileBtn" aria-label="Профиль пользователя">
+                        <i class="fas fa-user profile-icon"></i>
+                    </a>
+                </div>
+
+                <div class="auth-section">
+                    <button class="auth-btn login-btn" id="loginBtn">
+                        <span class="auth-text">Вход</span>
+                        <span class="auth-enter"><i class="fas fa-sign-in-alt"></i></span>
+                    </button>
+                    <button class="auth-btn register-btn" id="registerBtn">
+                        <span class="auth-text">Регистрация</span>
+                        <span class="auth-enter"><i class="fas fa-user-plus"></i></span>
+                    </button>
+                    <button class="theme-toggle-header" id="themeToggle" aria-label="Сменить тему" title="Сменить тему">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Модальное окно каталога -->
+        <div class="catalog-modal" id="catalogModal">
+            <div class="catalog-modal-content">
+                <div class="catalog-modal-header">
+                    <h3><i class="fas fa-bars"></i> Меню Gamemai</h3>
+                    <button class="catalog-modal-close" id="catalogModalClose">&times;</button>
+                </div>
+                <div class="catalog-modal-links">
+                    <a href="about.html" class="catalog-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>О нас</span>
+                    </a>
+                    <a href="contacts.html" class="catalog-link">
+                        <i class="fas fa-address-book"></i>
+                        <span>Контакты</span>
+                    </a>
+                    <a href="profile.html" class="catalog-link">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Профиль</span>
+                    </a>
+                    <a href="developers.html" class="catalog-link">
+                        <i class="fas fa-code"></i>
+                        <span>Разработчикам</span>
+                    </a>
+                    <a href="investors.html" class="catalog-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Инвесторам</span>
+                    </a>
+                    <a href="support.html" class="catalog-link">
+                        <i class="fas fa-headset"></i>
+                        <span>Поддержка</span>
+                    </a>
+                    <a href="privacy.html" class="catalog-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Конфиденциальность</span>
+                    </a>
+                    <a href="terms.html" class="catalog-link">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Пользовательское соглашение</span>
+                    </a>
+                    <a href="admin.html" class="catalog-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Админ-панель</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно авторизации -->
+        <div class="auth-modal" id="authModal">
+            <div class="auth-modal-content">
+                <div class="auth-modal-header">
+                    <h3 id="authModalTitle"><i class="fas fa-user"></i> Вход в Gamemai</h3>
+                    <button class="auth-modal-close" id="authModalClose">&times;</button>
+                </div>
+                <div class="auth-modal-tabs">
+                    <button class="auth-tab active" data-tab="login">
+                        <i class="fas fa-sign-in-alt"></i> Вход
+                    </button>
+                    <button class="auth-tab" data-tab="register">
+                        <i class="fas fa-user-plus"></i> Регистрация
+                    </button>
+                </div>
+                
+                <form class="auth-form active" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="loginEmail" placeholder="Введите ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword"><i class="fas fa-lock"></i> Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            <span>Запомнить меня</span>
+                        </label>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-sign-in-alt"></i> Войти в аккаунт
+                    </button>
+                    <div class="auth-divider">
+                        <span>или войдите через</span>
+                    </div>
+                    <div class="social-auth">
+                        <button type="button" class="social-btn vk-btn">
+                            <i class="fab fa-vk"></i> ВКонтакте
+                        </button>
+                        <button type="button" class="social-btn google-btn">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                </form>
+                
+                <form class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName"><i class="fas fa-user"></i> Имя пользователя</label>
+                        <input type="text" id="registerName" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="registerEmail" placeholder="Введите ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword"><i class="fas fa-lock"></i> Пароль</label>
+                        <input type="password" id="registerPassword" placeholder="Придумайте пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword"><i class="fas fa-lock"></i> Подтвердите пароль</label>
+                        <input type="password" id="registerConfirmPassword" placeholder="Повторите пароль" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>Я согласен с <a href="terms.html">правилами</a> и <a href="privacy.html">политикой конфиденциальности</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-user-plus"></i> Создать аккаунт
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-content">
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <span>/</span>
+                <span>Профиль пользователя</span>
+            </div>
+        </div>
+
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-user-circle"></i> Мой профиль
+                </h1>
+                <p class="page-subtitle">Управление вашим аккаунтом и история покупок</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <!-- Статистика пользователя -->
+                <div class="info-card">
+                    <h2><i class="fas fa-chart-line"></i> Статистика аккаунта</h2>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-gamepad"></i>
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Купленных игр</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-coins"></i>
+                            <div class="stat-value">24,597 ₽</div>
+                            <div class="stat-label">Общая сумма покупок</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="stat-value">156</div>
+                            <div class="stat-label">Дней с регистрации</div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-crown"></i>
+                            <div class="stat-value">Gold</div>
+                            <div class="stat-label">Уровень аккаунта</div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-info">
+                        <h3><i class="fas fa-user"></i> Информация о пользователе</h3>
+                        <div class="user-info-grid">
+                            <div class="user-info-item">
+                                <strong>Имя пользователя:</strong>
+                                <span>Игрок_007</span>
+                            </div>
+                            <div class="user-info-item">
+                                <strong>Email:</strong>
+                                <span>player007@gamemai.com</span>
+                            </div>
+                            <div class="user-info-item">
+                                <strong>Дата регистрации:</strong>
+                                <span>15.06.2023</span>
+                            </div>
+                            <div class="user-info-item">
+                                <strong>Страна:</strong>
+                                <span>Россия</span>
+                            </div>
+                            <div class="user-info-item">
+                                <strong>Язык:</strong>
+                                <span>Русский</span>
+                            </div>
+                            <div class="user-info-item">
+                                <strong>Статус:</strong>
+                                <span class="badge-success">Активен</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- История покупок -->
+                <div class="info-card">
+                    <h2><i class="fas fa-history"></i> История покупок</h2>
+                    
+                    <div class="purchase-history">
+                        <!-- Покупка 1 -->
+                        <div class="purchase-history-item">
+                            <img src="img/cs.png" alt="Counter-Strike 2">
+                            <div class="purchase-info">
+                                <h4>Counter-Strike 2</h4>
+                                <p>Игра • Активировано</p>
+                                <div class="purchase-date">10.01.2024</div>
+                            </div>
+                            <div class="purchase-price">Бесплатно</div>
+                            <div class="purchase-status">
+                                <span class="badge-success">Активировано</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Покупка 2 -->
+                        <div class="purchase-history-item">
+                            <img src="img/i.webp" alt="Cyberpunk 2077">
+                            <div class="purchase-info">
+                                <h4>Cyberpunk 2077: Phantom Liberty</h4>
+                                <p>Дополнение • Активировано</p>
+                                <div class="purchase-date">05.01.2024</div>
+                            </div>
+                            <div class="purchase-price">1,999 ₽</div>
+                            <div class="purchase-status">
+                                <span class="badge-success">Активировано</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Покупка 3 -->
+                        <div class="purchase-history-item">
+                            <img src="img/i (1).webp" alt="Elden Ring">
+                            <div class="purchase-info">
+                                <h4>Elden Ring: Shadow of the Erdtree</h4>
+                                <p>Дополнение • Активировано</p>
+                                <div class="purchase-date">28.12.2023</div>
+                            </div>
+                            <div class="purchase-price">2,499 ₽</div>
+                            <div class="purchase-status">
+                                <span class="badge-success">Активировано</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Покупка 4 -->
+                        <div class="purchase-history-item">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #ff6b6b, #ff8e8e); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-gem" style="color: white; font-size: 24px;"></i>
+                            </div>
+                            <div class="purchase-info">
+                                <h4>Премиум набор CS:GO</h4>
+                                <p>Внутриигровые предметы • Использовано</p>
+                                <div class="purchase-date">20.12.2023</div>
+                            </div>
+                            <div class="purchase-price">799 ₽</div>
+                            <div class="purchase-status">
+                                <span class="badge-success">Использовано</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Покупка 5 -->
+                        <div class="purchase-history-item">
+                            <img src="img/i (2).webp" alt="FC 24">
+                            <div class="purchase-info">
+                                <h4>FC 24</h4>
+                                <p>Игра • Активировано</p>
+                                <div class="purchase-date">15.12.2023</div>
+                            </div>
+                            <div class="purchase-price">3,499 ₽</div>
+                            <div class="purchase-status">
+                                <span class="badge-success">Активировано</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; text-align: center;">
+                        <button class="submit-btn" onclick="showNotification('Полная история покупок загружается...', 'info')">
+                            <i class="fas fa-download"></i> Загрузить полную историю
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Смена пароля -->
+                <div class="info-card">
+                    <h2><i class="fas fa-key"></i> Смена пароля</h2>
+                    
+                    <div class="password-form">
+                        <form id="changePasswordForm">
+                            <div class="form-group">
+                                <label for="currentPassword"><i class="fas fa-lock"></i> Текущий пароль</label>
+                                <input type="password" id="currentPassword" placeholder="Введите текущий пароль" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="newPassword"><i class="fas fa-key"></i> Новый пароль</label>
+                                    <input type="password" id="newPassword" placeholder="Введите новый пароль" required>
+                                    <div id="passwordStrength" class="password-strength"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword"><i class="fas fa-key"></i> Подтвердите пароль</label>
+                                    <input type="password" id="confirmPassword" placeholder="Повторите новый пароль" required>
+                                    <div id="passwordMatch" class="password-strength"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-save"></i> Сохранить новый пароль
+                                </button>
+                                <button type="button" class="submit-btn" style="background: transparent; border: 2px solid var(--border-color); color: var(--text-primary); margin-left: 15px;" onclick="document.getElementById('changePasswordForm').reset(); document.getElementById('passwordStrength').innerHTML = ''; document.getElementById('passwordMatch').innerHTML = '';">
+                                    <i class="fas fa-times"></i> Отмена
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="index.html" class="footer-logo-link">
+                            <img src="img/logo.png" alt="Gamemai">
+                            <div class="footer-logo-text">
+                                <h3>Gamemai</h3>
+                                <p>Игровой магазин нового поколения</p>
+                            </div>
+                        </a>
+                        <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+                    </div>
+                    
+                    <div class="footer-business">
+                        <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
+                        <div class="business-links">
+                            <a href="developers.html" class="business-link">
+                                <i class="fas fa-code"></i>
+                                <span>Разработчикам</span>
+                                <small>Публикация игр</small>
+                            </a>
+                            <a href="investors.html" class="business-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Инвесторам</span>
+                                <small>Инвестиции и партнерство</small>
+                            </a>
+                            <a href="admin.html" class="business-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>Админ-панель</span>
+                                <small>Управление контентом</small>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <h4><i class="fas fa-info-circle"></i> Информация</h4>
+                        <div class="info-links">
+                            <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
+                            <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
+                            <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
+                            <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+                            <a href="terms.html"><i class="fas fa-file-contract"></i> Пользовательское соглашение</a>
+                            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p class="footer-copyright">
+                            <i class="far fa-copyright"></i> 2023 Gamemai. Все права защищены.
+                        </p>
+                        <div class="footer-stats">
+                            <span><i class="fas fa-gamepad"></i> 10,000+ игр</span>
+                            <span><i class="fas fa-users"></i> 5M+ пользователей</span>
+                            <span><i class="fas fa-globe"></i> 150+ стран</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/modals.js"></script>
+    <script>
+        // Функция для проверки сложности пароля
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            let message = '';
+            let color = '#ff6b6b';
+            
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            switch(strength) {
+                case 0:
+                case 1:
+                    message = 'Слабый пароль';
+                    color = '#ff6b6b';
+                    break;
+                case 2:
+                    message = 'Средний пароль';
+                    color = '#ffd43b';
+                    break;
+                case 3:
+                    message = 'Хороший пароль';
+                    color = '#51cf66';
+                    break;
+                case 4:
+                    message = 'Отличный пароль!';
+                    color = '#2b8a3e';
+                    break;
+            }
+            
+            document.getElementById('passwordStrength').innerHTML = `
+                <div class="strength-bar">
+                    <div class="strength-fill" style="width: ${strength * 25}%; background-color: ${color};"></div>
+                </div>
+                <span class="strength-text" style="color: ${color};">${message}</span>
+            `;
+        }
+        
+        // Функция для проверки совпадения паролей
+        function checkPasswordMatch() {
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const matchIndicator = document.getElementById('passwordMatch');
+            
+            if (!newPassword && !confirmPassword) {
+                matchIndicator.innerHTML = '';
+                return;
+            }
+            
+            if (newPassword === confirmPassword) {
+                matchIndicator.innerHTML = `
+                    <span style="color: #51cf66;">
+                        <i class="fas fa-check-circle"></i> Пароли совпадают
+                    </span>
+                `;
+            } else {
+                matchIndicator.innerHTML = `
+                    <span style="color: #ff6b6b;">
+                        <i class="fas fa-exclamation-circle"></i> Пароли не совпадают
+                    </span>
+                `;
+            }
+        }
+        
+        // Обработчики событий для формы смены пароля
+        document.getElementById('newPassword').addEventListener('input', function() {
+            checkPasswordStrength(this.value);
+            checkPasswordMatch();
+        });
+        
+        document.getElementById('confirmPassword').addEventListener('input', checkPasswordMatch);
+        
+        // Обработка отправки формы смены пароля
+        document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                showNotification('Заполните все поля', 'error');
+                return;
+            }
+            
+            if (newPassword !== confirmPassword) {
+                showNotification('Пароли не совпадают', 'error');
+                return;
+            }
+            
+            if (newPassword.length < 6) {
+                showNotification('Пароль должен содержать минимум 6 символов', 'error');
+                return;
+            }
+            
+            // Здесь должна быть логика проверки текущего пароля и его смены
+            showNotification('Пароль успешно изменен', 'success');
+            this.reset();
+            document.getElementById('passwordStrength').innerHTML = '';
+            document.getElementById('passwordMatch').innerHTML = '';
+        });
+        
+        // Простая функция для уведомлений
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div style="position: fixed; top: 20px; right: 20px; background-color: ${type === 'error' ? '#ff6b6b' : type === 'success' ? '#51cf66' : '#4dabf7'}; color: white; padding: 15px 20px; border-radius: 10px; z-index: 9999; box-shadow: 0 5px 20px rgba(0,0,0,0.3);">
+                    <i class="fas fa-${type === 'error' ? 'exclamation-circle' : type === 'success' ? 'check-circle' : 'info-circle'}"></i> ${message}
+                </div>
+            `;
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - Gamemai</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <div class="container header-container">
+                <!-- Логотип слева -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo.png" alt="Gamemai" class="logo-img">
+                    </a>
+                </div>
+
+                <!-- Каталог -->
+                <div class="catalog-section">
+                    <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог">
+                        <span class="catalog-btn-icon">
+                            <i class="fas fa-bars"></i>
+                        </span>
+                    </button>
+                    <div class="catalog-text">Каталог</div>
+                </div>
+
+                <!-- Поиск игр -->
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Поиск игр..." id="searchInput">
+                    <button class="search-btn" aria-label="Найти" id="searchBtn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Правый блок с кнопками -->
+                <div class="header-right">
+                    <!-- Профиль -->
+                    <div class="profile-section">
+                        <button class="profile-btn" id="profileBtn" aria-label="Профиль пользователя">
+                            <i class="fas fa-user profile-icon"></i>
+                        </button>
+                    </div>
+
+                    <!-- Авторизация -->
+                    <div class="auth-section">
+                        <button class="auth-btn login-btn" id="loginBtn">
+                            Вход
+                        </button>
+                        <button class="auth-btn register-btn" id="registerBtn">
+                            Регистрация
+                        </button>
+                    </div>
+
+                    <!-- Смена темы -->
+                    <button class="theme-toggle-header" id="themeToggle" aria-label="Сменить тему" title="Сменить тему">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Модальное окно каталога -->
+        <div class="catalog-modal" id="catalogModal">
+            <div class="catalog-modal-content">
+                <div class="catalog-modal-header">
+                    <h3><i class="fas fa-bars"></i> Меню Gamemai</h3>
+                    <button class="catalog-modal-close" id="catalogModalClose">&times;</button>
+                </div>
+                <div class="catalog-modal-links">
+                    <a href="about.html" class="catalog-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>О нас</span>
+                    </a>
+                    <a href="contacts.html" class="catalog-link">
+                        <i class="fas fa-address-book"></i>
+                        <span>Контакты</span>
+                    </a>
+                    <a href="profile.html" class="catalog-link">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Профиль</span>
+                    </a>
+                    <a href="developers.html" class="catalog-link">
+                        <i class="fas fa-code"></i>
+                        <span>Разработчикам</span>
+                    </a>
+                    <a href="investors.html" class="catalog-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Инвесторам</span>
+                    </a>
+                    <a href="support.html" class="catalog-link">
+                        <i class="fas fa-headset"></i>
+                        <span>Поддержка</span>
+                    </a>
+                    <a href="privacy.html" class="catalog-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Конфиденциальность</span>
+                    </a>
+                    <a href="terms.html" class="catalog-link">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Пользовательское соглашение</span>
+                    </a>
+                    <a href="index.html" class="catalog-link">
+                        <i class="fas fa-home"></i>
+                        <span>Главная</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно авторизации -->
+        <div class="auth-modal" id="authModal">
+            <div class="auth-modal-content">
+                <div class="auth-modal-header">
+                    <h3 id="authModalTitle"><i class="fas fa-user"></i> Вход в Gamemai</h3>
+                    <button class="auth-modal-close" id="authModalClose">&times;</button>
+                </div>
+                <div class="auth-modal-tabs">
+                    <button class="auth-tab active" data-tab="login">
+                        <i class="fas fa-sign-in-alt"></i> Вход
+                    </button>
+                    <button class="auth-tab" data-tab="register">
+                        <i class="fas fa-user-plus"></i> Регистрация
+                    </button>
+                </div>
+                
+                <form class="auth-form active" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="loginEmail" placeholder="Введите ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword"><i class="fas fa-lock"></i> Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            <span>Запомнить меня</span>
+                        </label>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-sign-in-alt"></i> Войти в аккаунт
+                    </button>
+                </form>
+                
+                <form class="auth-form" id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName"><i class="fas fa-user"></i> Имя пользователя</label>
+                        <input type="text" id="registerName" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="registerEmail" placeholder="Введите ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword"><i class="fas fa-lock"></i> Пароль</label>
+                        <input type="password" id="registerPassword" placeholder="Придумайте пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword"><i class="fas fa-lock"></i> Подтвердите пароль</label>
+                        <input type="password" id="registerConfirmPassword" placeholder="Повторите пароль" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>Я согласен с правилами</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">
+                        <i class="fas fa-user-plus"></i> Создать аккаунт
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-content">
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <span>/</span>
+                <span>Админ-панель</span>
+            </div>
+        </div>
+
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="fas fa-cogs"></i> Админ-панель
+                </h1>
+                <p class="page-subtitle">Управление контентом и статистикой платформы Gamemai</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <!-- Статистика -->
+                <div class="admin-stats">
+                    <div class="admin-stat-card">
+                        <i class="fas fa-gamepad"></i>
+                        <div class="stat-value">10,257</div>
+                        <div class="stat-label">Всего игр</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-value">5,248,391</div>
+                        <div class="stat-label">Пользователей</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <div class="stat-value">1,248,957</div>
+                        <div class="stat-label">Покупок</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="stat-value">248.5M ₽</div>
+                        <div class="stat-label">Выручка</div>
+                    </div>
+                </div>
+
+                <!-- Табы админ-панели -->
+                <div class="admin-tabs">
+                    <button class="admin-tab active" data-tab="games">
+                        <i class="fas fa-gamepad"></i> Игры
+                    </button>
+                    <button class="admin-tab" data-tab="users">
+                        <i class="fas fa-users"></i> Пользователи
+                    </button>
+                    <button class="admin-tab" data-tab="orders">
+                        <i class="fas fa-shopping-cart"></i> Заказы
+                    </button>
+                    <button class="admin-tab" data-tab="settings">
+                        <i class="fas fa-cog"></i> Настройки
+                    </button>
+                </div>
+
+                <!-- Контент вкладки "Игры" -->
+                <div class="admin-content active" id="gamesTab">
+                    <div class="game-form">
+                        <h3><i class="fas fa-plus-circle"></i> Добавить новую игру</h3>
+                        
+                        <div class="admin-form-row">
+                            <div class="admin-form-group">
+                                <label for="gameTitle"><i class="fas fa-heading"></i> Название игры</label>
+                                <input type="text" id="gameTitle" placeholder="Введите название игры" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="gamePrice"><i class="fas fa-ruble-sign"></i> Цена</label>
+                                <input type="number" id="gamePrice" placeholder="Цена в рублях" required>
+                            </div>
+                        </div>
+                        
+                        <div class="admin-form-row">
+                            <div class="admin-form-group">
+                                <label for="gameGenre"><i class="fas fa-tag"></i> Жанр</label>
+                                <select id="gameGenre" required>
+                                    <option value="">Выберите жанр</option>
+                                    <option value="rpg">РПГ</option>
+                                    <option value="shooter">Шутер</option>
+                                    <option value="strategy">Стратегия</option>
+                                    <option value="adventure">Приключения</option>
+                                    <option value="sports">Спорт</option>
+                                    <option value="simulator">Симулятор</option>
+                                </select>
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="gameDiscount"><i class="fas fa-percentage"></i> Скидка (%)</label>
+                                <input type="number" id="gameDiscount" placeholder="0" min="0" max="100">
+                            </div>
+                        </div>
+                        
+                        <div class="admin-form-group">
+                            <label for="gameDescription"><i class="fas fa-align-left"></i> Описание игры</label>
+                            <textarea id="gameDescription" placeholder="Подробное описание игры" rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="image-upload" id="imageUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Перетащите изображение игры сюда или нажмите для выбора</p>
+                            <small>Рекомендуемый размер: 600x400px</small>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-save"></i> Сохранить игру
+                        </button>
+                    </div>
+                    
+                    <div class="games-list">
+                        <h3><i class="fas fa-list"></i> Список игр</h3>
+                        
+                        <div class="admin-section-content">
+                            <table class="games-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Изображение</th>
+                                        <th>Название</th>
+                                        <th>Жанр</th>
+                                        <th>Цена</th>
+                                        <th>Статус</th>
+                                        <th>Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <img src="img/cuperpunk.webp" alt="Cyberpunk" class="game-image-small">
+                                        </td>
+                                        <td>Cyberpunk 2077</td>
+                                        <td><span class="badge-active">РПГ</span></td>
+                                        <td>1999 ₽</td>
+                                        <td><span class="badge-success">Активна</span></td>
+                                        <td>
+                                            <div class="game-actions">
+                                                <button class="action-btn edit-btn">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="action-btn delete-btn">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <img src="img/elden_ring.webp" alt="Elden Ring" class="game-image-small">
+                                        </td>
+                                        <td>Elden Ring</td>
+                                        <td><span class="badge-active">РПГ</span></td>
+                                        <td>2499 ₽</td>
+                                        <td><span class="badge-success">Активна</span></td>
+                                        <td>
+                                            <div class="game-actions">
+                                                <button class="action-btn edit-btn">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="action-btn delete-btn">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <img src="img/fifa2024.webp" alt="FC 24" class="game-image-small">
+                                        </td>
+                                        <td>FC 24</td>
+                                        <td><span class="badge-active">Спорт</span></td>
+                                        <td>3499 ₽</td>
+                                        <td><span class="badge-success">Активна</span></td>
+                                        <td>
+                                            <div class="game-actions">
+                                                <button class="action-btn edit-btn">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="action-btn delete-btn">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент вкладки "Пользователи" -->
+                <div class="admin-content" id="usersTab">
+                    <div class="admin-section">
+                        <h3><i class="fas fa-users"></i> Управление пользователями</h3>
+                        <div class="admin-section-content">
+                            <p>Здесь вы можете управлять пользователями платформы: просматривать список пользователей, редактировать их данные, блокировать аккаунты и т.д.</p>
+                            
+                            <div class="info-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Имя</th>
+                                            <th>Email</th>
+                                            <th>Регистрация</th>
+                                            <th>Статус</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1001</td>
+                                            <td>Иван Петров</td>
+                                            <td>ivan@example.com</td>
+                                            <td>2023-10-15</td>
+                                            <td><span class="badge-success">Активен</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1002</td>
+                                            <td>Анна Сидорова</td>
+                                            <td>anna@example.com</td>
+                                            <td>2023-10-10</td>
+                                            <td><span class="badge-success">Активен</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1003</td>
+                                            <td>Сергей Иванов</td>
+                                            <td>sergey@example.com</td>
+                                            <td>2023-10-05</td>
+                                            <td><span class="badge-active">Заблокирован</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент вкладки "Заказы" -->
+                <div class="admin-content" id="ordersTab">
+                    <div class="admin-section">
+                        <h3><i class="fas fa-shopping-cart"></i> История заказов</h3>
+                        <div class="admin-section-content">
+                            <p>Просмотр и управление заказами пользователей. Здесь отображается информация о всех совершенных покупках на платформе.</p>
+                            
+                            <div class="info-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>№ Заказа</th>
+                                            <th>Пользователь</th>
+                                            <th>Игра</th>
+                                            <th>Сумма</th>
+                                            <th>Дата</th>
+                                            <th>Статус</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ORD-2023-001</td>
+                                            <td>Иван Петров</td>
+                                            <td>Cyberpunk 2077</td>
+                                            <td>1999 ₽</td>
+                                            <td>2023-10-20</td>
+                                            <td><span class="badge-completed">Завершен</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ORD-2023-002</td>
+                                            <td>Анна Сидорова</td>
+                                            <td>Elden Ring</td>
+                                            <td>2499 ₽</td>
+                                            <td>2023-10-18</td>
+                                            <td><span class="badge-completed">Завершен</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ORD-2023-003</td>
+                                            <td>Сергей Иванов</td>
+                                            <td>FC 24</td>
+                                            <td>3499 ₽</td>
+                                            <td>2023-10-15</td>
+                                            <td><span class="badge-active">В обработке</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент вкладки "Настройки" -->
+                <div class="admin-content" id="settingsTab">
+                    <div class="admin-section">
+                        <h3><i class="fas fa-cog"></i> Настройки платформы</h3>
+                        <div class="admin-section-content">
+                            <form class="page-form">
+                                <div class="form-group">
+                                    <label for="siteName"><i class="fas fa-globe"></i> Название сайта</label>
+                                    <input type="text" id="siteName" value="Gamemai" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="siteDescription"><i class="fas fa-align-left"></i> Описание сайта</label>
+                                    <textarea id="siteDescription" rows="3" required>Игровой магазин нового поколения</textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="commission"><i class="fas fa-percentage"></i> Комиссия платформы (%)</label>
+                                    <input type="number" id="commission" value="15" min="0" max="50" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="supportEmail"><i class="fas fa-envelope"></i> Email поддержки</label>
+                                    <input type="email" id="supportEmail" value="support@gamemai.ru" required>
+                                </div>
+                                
+                                <div class="form-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        <span>Включить техническое обслуживание</span>
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-save"></i> Сохранить настройки
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="index.html" class="footer-logo-link">
+                            <img src="img/logo.png" alt="Gamemai">
+                            <div class="footer-logo-text">
+                                <h3>Gamemai</h3>
+                                <p>Игровой магазин нового поколения</p>
+                            </div>
+                        </a>
+                        <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+                    </div>
+                    
+                    <div class="footer-business">
+                        <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
+                        <div class="business-links">
+                            <a href="developers.html" class="business-link">
+                                <i class="fas fa-code"></i>
+                                <span>Разработчикам</span>
+                                <small>Публикация игр</small>
+                            </a>
+                            <a href="investors.html" class="business-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Инвесторам</span>
+                                <small>Инвестиции и партнерство</small>
+                            </a>
+                            <a href="admin.html" class="business-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>Админ-панель</span>
+                                <small>Управление контентом</small>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <h4><i class="fas fa-info-circle"></i> Информация</h4>
+                        <div class="info-links">
+                            <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
+                            <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
+                            <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
+                            <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p class="footer-copyright">
+                            <i class="far fa-copyright"></i> 2023 Gamemai. Все права защищены.
+                        </p>
+                        <div class="footer-stats">
+                            <span><i class="fas fa-gamepad"></i> 10,000+ игр</span>
+                            <span><i class="fas fa-users"></i> 5M+ пользователей</span>
+                            <span><i class="fas fa-globe"></i> 150+ стран</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

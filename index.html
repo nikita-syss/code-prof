@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/modals.css">
-    <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
+            <!-- Логотип слева -->
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
-                    <img src=img/logo.png t="Gamemai" class="logo-img" width="106" height="102">
+                    <img src="img/logo.png" alt="Gamemai" class="logo-img">
                 </a>
             </div>
 
+            <!-- Каталог -->
             <div class="catalog-section">
                 <button class="catalog-btn" id="catalogBtn" aria-label="Открыть каталог">
                     <span class="catalog-btn-icon">
@@ -29,80 +30,93 @@
                 <div class="catalog-text">Каталог</div>
             </div>
 
+            <!-- Поиск игр -->
             <div class="search-container">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Поиск игр...">
-                <button class="search-btn" aria-label="Найти">
+                <input type="text" class="search-input" placeholder="Поиск игр..." id="searchInput">
+                <button class="search-btn" aria-label="Найти" id="searchBtn">
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
 
-            <div class="profile-section">
-                <button class="profile-btn" id="profileBtn" aria-label="Профиль пользователя">
-                    <i class="fas fa-user profile-icon"></i>
-                </button>
-            </div>
+            <!-- Правый блок с кнопками -->
+            <div class="header-right">
+                <!-- Профиль -->
+                <div class="profile-section">
+                    <button class="profile-btn" id="profileBtn" aria-label="Профиль пользователя">
+                        <i class="fas fa-user profile-icon"></i>
+                    </button>
+                </div>
 
-            <div class="auth-section">
-                <button class="auth-btn login-btn" id="loginBtn">
-                    <span class="auth-text">Вход</span>
-                    <span class="auth-enter"><i class="fas fa-sign-in-alt"></i></span>
-                </button>
-                <button class="auth-btn register-btn" id="registerBtn">
-                    <span class="auth-text">Регистрация</span>
-                    <span class="auth-enter"><i class="fas fa-user-plus"></i></span>
+                <!-- Авторизация -->
+                <div class="auth-section">
+                    <button class="auth-btn login-btn" id="loginBtn">
+                        Вход
+                    </button>
+                    <button class="auth-btn register-btn" id="registerBtn">
+                        Регистрация
+                    </button>
+                </div>
+
+                <!-- Смена темы -->
+                <button class="theme-toggle-header" id="themeToggle" aria-label="Сменить тему" title="Сменить тему">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- Модальное окно каталога -->
     <div class="catalog-modal" id="catalogModal">
         <div class="catalog-modal-content">
             <div class="catalog-modal-header">
-                <h3><i class="fas fa-bars"></i> Каталог Gamemai</h3>
+                <h3><i class="fas fa-bars"></i> Меню Gamemai</h3>
                 <button class="catalog-modal-close" id="catalogModalClose">&times;</button>
             </div>
             <div class="catalog-modal-links">
-                <a href="about.html" class="catalog-link">
-                    <i class="fas fa-info-circle"></i>
-                    <span>О нас</span>
-                </a>
-                <a href="contacts.html" class="catalog-link">
-                    <i class="fas fa-address-book"></i>
-                    <span>Контакты</span>
-                </a>
-                <a href="profile.html" class="catalog-link">
-                    <i class="fas fa-user-circle"></i>
-                    <span>Профиль</span>
-                </a>
-                <a href="developers.html" class="catalog-link">
-                    <i class="fas fa-code"></i>
-                    <span>Разработчикам</span>
-                </a>
-                <a href="authors.html" class="catalog-link">
-                    <i class="fas fa-pen-nib"></i>
-                    <span>Авторам</span>
-                </a>
-                <a href="investors.html" class="catalog-link">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Инвестиции</span>
-                </a>
-                <a href="advertising.html" class="catalog-link">
-                    <i class="fas fa-bullhorn"></i>
-                    <span>Реклама</span>
-                </a>
-                <a href="support.html" class="catalog-link">
-                    <i class="fas fa-headset"></i>
-                    <span>Поддержка</span>
-                </a>
-                <a href="privacy.html" class="catalog-link">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Конфиденциальность</span>
-                </a>
+    <a href="about.html" class="catalog-link">
+        <i class="fas fa-info-circle"></i>
+        <span>О нас</span>
+    </a>
+    <a href="contacts.html" class="catalog-link">
+        <i class="fas fa-address-book"></i>
+        <span>Контакты</span>
+    </a>
+    <a href="profile.html" class="catalog-link">
+        <i class="fas fa-user-circle"></i>
+        <span>Профиль</span>
+    </a>
+    <a href="developers.html" class="catalog-link">
+        <i class="fas fa-code"></i>
+        <span>Разработчикам</span>
+    </a>
+    <a href="investors.html" class="catalog-link">
+        <i class="fas fa-chart-line"></i>
+        <span>Инвесторам</span>
+    </a>
+    <a href="support.html" class="catalog-link">
+        <i class="fas fa-headset"></i>
+        <span>Поддержка</span>
+    </a>
+    <a href="privacy.html" class="catalog-link">
+        <i class="fas fa-shield-alt"></i>
+        <span>Конфиденциальность</span>
+    </a>
+    <a href="terms.html" class="catalog-link">
+        <i class="fas fa-file-contract"></i>
+        <span>Пользовательское соглашение</span>
+    </a>
+    <!-- ДОБАВЬТЕ эту ссылку -->
+    <a href="admin.html" class="catalog-link">
+        <i class="fas fa-cogs"></i>
+        <span>Админ-панель</span>
+    </a>
+</div>
             </div>
         </div>
     </div>
 
+    <!-- Модальное окно авторизации -->
     <div class="auth-modal" id="authModal">
         <div class="auth-modal-content">
             <div class="auth-modal-header">
@@ -137,17 +151,6 @@
                 <button type="submit" class="auth-submit-btn">
                     <i class="fas fa-sign-in-alt"></i> Войти в аккаунт
                 </button>
-                <div class="auth-divider">
-                    <span>или войдите через</span>
-                </div>
-                <div class="social-auth">
-                    <button type="button" class="social-btn vk-btn">
-                        <i class="fab fa-vk"></i> ВКонтакте
-                    </button>
-                    <button type="button" class="social-btn google-btn">
-                        <i class="fab fa-google"></i> Google
-                    </button>
-                </div>
             </form>
             
             <form class="auth-form" id="registerForm">
@@ -170,7 +173,7 @@
                 <div class="form-options">
                     <label class="checkbox-label">
                         <input type="checkbox" required>
-                        <span>Я согласен с <a href="terms.html">правилами</a> и <a href="privacy.html">политикой конфиденциальности</a></span>
+                        <span>Я согласен с правилами</span>
                     </label>
                 </div>
                 <button type="submit" class="auth-submit-btn">
@@ -181,6 +184,7 @@
     </div>
 
     <main class="main-content">
+        <!-- Слайдер с играми -->
         <section class="games-slider">
             <div class="container">
                 <div class="slider-container">
@@ -199,6 +203,7 @@
                         </button>
                         
                         <div id="sliderWrapper">
+                            <!-- Слайды загружаются через JavaScript -->
                         </div>
                         
                         <button class="slider-nav-btn next-btn" aria-label="Следующий слайд">
@@ -207,11 +212,13 @@
                     </div>
 
                     <div class="slider-indicators" id="indicatorsContainer">
+                        <!-- Индикаторы загружаются через JavaScript -->
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Секция "Почему выбирают Gamemai" -->
         <section class="why-us-section">
             <div class="container">
                 <div class="why-us-container">
@@ -251,6 +258,7 @@
                         </ol>
                     </div>
                     
+                    <!-- Блок поиска по жанрам -->
                     <div class="genre-search-block">
                         <h3 class="genre-search-title">
                             <i class="fas fa-search"></i> Поиск по жанрам
@@ -301,109 +309,398 @@
             </div>
         </section>
 
-        <section class="popular-games">
-            <div class="container">
-                <h2 class="popular-title"></h2>
-                
-                <div class="popular-games-grid" id="popularGamesGrid">
+<!-- Карточки популярных игр -->
+<section class="popular-games">
+    <div class="container">
+        <div class="popular-games-grid">
+            <!-- Игра 1 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/cuperpunk.webp" alt="Cyberpunk 2077: Phantom Liberty">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                    <div class="game-genre-badge">РПГ</div>
                 </div>
-                
-                <div class="view-all-container">
+                <div class="game-info">
+                    <h3 class="game-name">Cyberpunk 2077: Phantom Liberty</h3>
+                    <p class="game-description-short">Дополнение к культовой игре с новым районом, сюжетом и улучшенной графикой.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">2999 руб.</span>
+                            <span class="game-price">1999 руб.</span>
+                        </div>
+                        <span class="game-discount">-33%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
                 </div>
             </div>
-        </section>
-
-        <section class="partners-section">
-            <div class="container">
-                <h2 class="partners-title">
-                </h2>
-
-                <div class="partners-grid">
-                    <div class="partner-card">
-                        <div class="partner-logo">
-                            <img src="img/1c.png" alt="1C Game Studios">
-                        </div>
-                        <div class="partner-content">
-                            <h3><i class="fas fa-gamepad"></i> 1C Game Studios</h3>
-                            <p>Разрабатываем и издаем игры по всему миру. Наши игры, Боевой законопулятор — историческая реконструкция авиации эпохи Первой мировой войны.</p>
-                            <div class="partner-tags">
-                                <span class="partner-tag">Разработка</span>
-                                <span class="partner-tag">Издание</span>
-                                <span class="partner-tag">Публикация</span>
-                            </div>
-                        </div>
+            
+            <!-- Игра 2 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/elden_ring.webp" alt="Elden Ring: Shadow of the Erdtree">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
                     </div>
-                    <div class="partner-card">
-                        <div class="partner-logo">
-                            <img src="img/max.png" alt="Макс">
+                    <div class="game-genre-badge">РПГ</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">Elden Ring: Shadow of the Erdtree</h3>
+                    <p class="game-description-short">Новое дополнение к награжденной игре года с огромным новым миром.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">3499 руб.</span>
+                            <span class="game-price">2499 руб.</span>
                         </div>
-                        <div class="partner-content">
-                            <h3><i class="fas fa-comments"></i> Макс</h3>
-                            <p>Российский проектматформенный сервис империи сообщениями на базе одномоменной цифровой системы. Обновка в 2025 году, технологический компонент разрабатывается её доверной структурой ООО «Коммуникационная платформа».</p>
-                            <div class="partner-tags">
-                                <span class="partner-tag">Коммуникации</span>
-                                <span class="partner-tag">Технологии</span>
-                                <span class="partner-tag">Платформа</span>
-                            </div>
+                        <span class="game-discount">-29%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 3 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/fifa2024.webp" alt="FC 24">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.3</span>
+                    </div>
+                    <div class="game-genre-badge">Спорт</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">FC 24</h3>
+                    <p class="game-description-short">Новая футбольная игра с улучшенной физикой и реалистичной графикой.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">4499 руб.</span>
+                            <span class="game-price">3499 руб.</span>
                         </div>
+                        <span class="game-discount">-22%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 4 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/Call_Of_Duty_MW3_2023.jpg" alt="Call of Duty: Modern Warfare III">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                    <div class="game-genre-badge">Шутер</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">Call of Duty: Modern Warfare III</h3>
+                    <p class="game-description-short">Новая часть культового шутера с захватывающим сюжетом.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">4999 руб.</span>
+                            <span class="game-price">3999 руб.</span>
+                        </div>
+                        <span class="game-discount">-20%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 5 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/ведьмак.webp" alt="The Witcher 3: Complete Edition">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="game-genre-badge">РПГ</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">The Witcher 3: Complete Edition</h3>
+                    <p class="game-description-short">Полное издание культовой RPG с обоими дополнениями.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">1999 руб.</span>
+                            <span class="game-price">899 руб.</span>
+                        </div>
+                        <span class="game-discount">-55%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 6 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/rdr2.webp" alt="Red Dead Redemption 2">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="game-genre-badge">Приключения</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">Red Dead Redemption 2</h3>
+                    <p class="game-description-short">Эпическое приключение на Диком Западе от создателей GTA.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">3499 руб.</span>
+                            <span class="game-price">1599 руб.</span>
+                        </div>
+                        <span class="game-discount">-54%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 7 - Baldur's Gate 3 -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/bg.webp" alt="Baldur's Gate 3">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="game-genre-badge">РПГ</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">Baldur's Gate 3</h3>
+                    <p class="game-description-short">Эпическая RPG от создателей Divinity с глубоким сюжетом.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">3999 руб.</span>
+                            <span class="game-price">2999 руб.</span>
+                        </div>
+                        <span class="game-discount">-25%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 8 - Minecraft Legends -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/monecraft legends.webp" alt="Minecraft Legends">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.2</span>
+                    </div>
+                    <div class="game-genre-badge">Стратегия</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">Minecraft Legends</h3>
+                    <p class="game-description-short">Новая стратегия во вселенной Minecraft с увлекательным геймплеем.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">2499 руб.</span>
+                            <span class="game-price">1749 руб.</span>
+                        </div>
+                        <span class="game-discount">-30%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 9 - Dead Space -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/ds.webp" alt="Dead Space">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                    <div class="game-genre-badge">Хоррор</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">Dead Space Remake</h3>
+                    <p class="game-description-short">Полный ремейк культового хоррора с улучшенной графикой.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">3499 руб.</span>
+                            <span class="game-price">2099 руб.</span>
+                        </div>
+                        <span class="game-discount">-40%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Игра 10 - The Last of Us -->
+            <div class="popular-game-card">
+                <div class="game-image-container">
+                    <img src="img/tof.webp" alt="The Last of Us Part I">
+                    <div class="game-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="game-genre-badge">Экшен</div>
+                </div>
+                <div class="game-info">
+                    <h3 class="game-name">The Last of Us Part I</h3>
+                    <p class="game-description-short">Полный ремейк легендарной игры для нового поколения.</p>
+                    <div class="game-price-section">
+                        <div>
+                            <span class="game-old-price">4999 руб.</span>
+                            <span class="game-price">3999 руб.</span>
+                        </div>
+                        <span class="game-discount">-20%</span>
+                    </div>
+                    <button class="buy-game-btn">
+                        <i class="fas fa-shopping-cart"></i> Купить сейчас
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+       <!-- В секции партнеров index.html обновите код: -->
+
+<section class="partners-section">
+    <div class="container">
+        <div class="partners-grid">
+            <!-- Партнер 1 -->
+            <div class="partner-card">
+                <div class="partner-logo">
+                    <img src="img/1c.png" alt="1C Game Studios">
+                </div>
+                <div class="partner-content">
+                    <h3><i class="fas fa-gamepad"></i> 1C Game Studios</h3>
+                    <p>Разрабатываем и издаем игры по всему миру. Наши игры — историческая реконструкция авиации эпохи Первой мировой войны.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Разработка</span>
+                        <span class="partner-tag">Издание</span>
+                        <span class="partner-tag">Публикация</span>
                     </div>
                 </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="index.html" class="footer-logo-link">
-                        <img src="img/logo.png" alt="Gamemai">
-                        <div class="footer-logo-text">
-                            <h3>Gamemai</h3>
-                            <p>Игровой магазин нового поколения</p>
-                        </div>
-                    </a>
-                    <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+            </div>
+            
+            <!-- Партнер 2 -->
+            <div class="partner-card">
+                <div class="partner-logo">
+                    <img src="img/amd.webp" alt="AMD">
                 </div>
-                
-                <div class="footer-business">
-                    <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
-                    <div class="business-links">
-                        <a href="developers.html">
-                            <i class="fas fa-code"></i>
+                <div class="partner-content">
+                    <h3><i class="fas fa-microchip"></i> AMD</h3>
+                    <p>Американская компания, разработчик и производитель интегральных микросхем и электронных приборов.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Процессоры</span>
+                        <span class="partner-tag">Видеокарты</span>
+                        <span class="partner-tag">Технологии</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Партнер 3 - ДОБАВЛЕН МАКС -->
+            <div class="partner-card">
+                <div class="partner-logo">
+                    <img src="img/max.jfif" alt="Макс">
+                </div>
+                <div class="partner-content">
+                    <h3><i class="fas fa-comments"></i> Макс</h3>
+                    <p>Российский проектировочный сервис империи сообщениями на базе одномоменной цифровой системы.</p>
+                    <div class="partner-tags">
+                        <span class="partner-tag">Коммуникации</span>
+                        <span class="partner-tag">Технологии</span>
+                        <span class="partner-tag">Платформа</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="img/logo.png" alt="Gamemai">
+                    <div class="footer-logo-text">
+                        <h3>Gamemai</h3>
+                        <p>Игровой магазин нового поколения</p>
+                    </div>
+                </a>
+                <p class="footer-description">Мы предлагаем лучший выбор игр для всех платформ по самым выгодным ценам. Более 10,000 игр в каталоге.</p>
+            </div>
+            
+            <div class="footer-business">
+                <h4><i class="fas fa-briefcase"></i> Для бизнеса</h4>
+                <div class="business-links">
+                    <a href="developers.html" class="business-link">
+                        <i class="fas fa-code"></i>
+                        <div>
                             <span>Разработчикам</span>
                             <small>Публикация игр</small>
-                        </a>
-                        <a href="authors.html">
-                            <i class="fas fa-pen-nib"></i>
-                            <span>Авторам</span>
-                            <small>Контент и обзоры</small>
-                        </a>
-                        <a href="investors.html">
-                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </a>
+                    <a href="investors.html" class="business-link">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
                             <span>Инвесторам</span>
                             <small>Инвестиции и партнерство</small>
-                        </a>
-                        <a href="advertising.html">
-                            <i class="fas fa-bullhorn"></i>
-                            <span>Реклама</span>
-                            <small>Продвижение на платформе</small>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-info">
-                    <h4><i class="fas fa-info-circle"></i> Информация</h4>
-                    <div class="info-links">
-                        <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
-                        <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
-                        <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
-                        <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
-                        <a href="terms.html"><i class="fas fa-file-contract"></i> Пользовательское соглашение</a>
-                        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
-                    </div>
+                        </div>
+                    </a>
+                    <a href="admin.html" class="business-link">
+                        <i class="fas fa-cogs"></i>
+                        <div>
+                            <span>Админ-панель</span>
+                            <small>Управление контентом</small>
+                        </div>
+                    </a>
                 </div>
             </div>
+            
+            <div class="footer-info">
+                <h4><i class="fas fa-info-circle"></i> Информация</h4>
+                <div class="info-links">
+                    <a href="about.html"><i class="fas fa-info-circle"></i> О Gamemai</a>
+                    <a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a>
+                    <a href="support.html"><i class="fas fa-headset"></i> Поддержка</a>
+                    <a href="privacy.html"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+                    <a href="terms.html"><i class="fas fa-file-contract"></i> Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">
+                    <i class="far fa-copyright"></i> 2026 Gamemai. Все права защищены.
+                </p>
+                <div class="footer-stats">
+                    <span><i class="fas fa-gamepad"></i> 10,000+ игр</span>
+                    <span><i class="fas fa-users"></i> 5M+ пользователей</span>
+                    <span><i class="fas fa-globe"></i> 150+ стран</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script src="js/script.js"></script>
     <script src="js/slider.js"></script>
-    <script src="js/modals.js"></script>
 </body>
 </html>

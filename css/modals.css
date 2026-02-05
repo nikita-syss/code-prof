@@ -7,119 +7,79 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(5px);
 }
 
 .catalog-modal.show {
     display: flex;
-    opacity: 1;
-    animation: fadeIn 0.3s ease;
 }
 
 .catalog-modal-content {
-    background: linear-gradient(135deg, var(--dark-bg-light), var(--dark-bg-lighter));
+    background: var(--bg-lighter);
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     margin: auto;
-    border-radius: var(--border-radius-lg);
-    padding: 30px;
+    border-radius: var(--border-radius);
+    padding: 20px;
     position: relative;
-    transform: translateY(-50px);
-    transition: transform 0.3s ease;
     border: 1px solid var(--border-color);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.catalog-modal.show .catalog-modal-content {
-    transform: translateY(0);
-    animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .catalog-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .catalog-modal-header h3 {
-    font-size: 24px;
+    font-size: 18px;
     color: var(--primary-color);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .catalog-modal-close {
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-size: 30px;
+    font-size: 24px;
     cursor: pointer;
-    transition: var(--transition);
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-}
-
-.catalog-modal-close:hover {
-    color: var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .catalog-modal-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .catalog-link {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    background-color: var(--dark-bg);
+    gap: 10px;
+    padding: 10px 12px;
+    background-color: var(--bg);
     border-radius: var(--border-radius);
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 16px;
-    transition: var(--transition);
+    font-size: 14px;
     border: 1px solid transparent;
-    border-left: 4px solid transparent;
-}
-
-.catalog-link:hover {
-    background-color: var(--dark-bg-lighter);
-    border-color: var(--primary-color);
-    border-left-color: var(--primary-color);
-    transform: translateX(10px);
-    color: var(--text-primary);
 }
 
 .catalog-link i {
-    font-size: 18px;
-    width: 24px;
+    font-size: 14px;
+    width: 20px;
     color: var(--primary-color);
 }
 
+/* Модальное окно авторизации */
 .auth-modal {
     display: none;
     position: fixed;
@@ -129,90 +89,70 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(5px);
 }
 
 .auth-modal.show {
     display: flex;
-    opacity: 1;
-    animation: fadeIn 0.3s ease;
 }
 
 .auth-modal-content {
-    background: linear-gradient(135deg, var(--dark-bg-light), var(--dark-bg-lighter));
+    background: var(--bg-lighter);
     width: 90%;
-    max-width: 450px;
+    max-width: 400px;
     margin: auto;
-    border-radius: var(--border-radius-lg);
-    padding: 30px;
+    border-radius: var(--border-radius);
+    padding: 20px;
     position: relative;
-    transform: translateY(-50px);
-    transition: transform 0.3s ease;
     border: 1px solid var(--border-color);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.auth-modal.show .auth-modal-content {
-    transform: translateY(0);
-    animation: slideUp 0.3s ease;
 }
 
 .auth-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .auth-modal-header h3 {
-    font-size: 24px;
+    font-size: 18px;
     color: var(--primary-color);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .auth-modal-close {
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-size: 30px;
+    font-size: 24px;
     cursor: pointer;
-    transition: var(--transition);
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-}
-
-.auth-modal-close:hover {
-    color: var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .auth-modal-tabs {
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--border-color);
-    background-color: var(--dark-bg);
+    background-color: var(--bg);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     overflow: hidden;
 }
 
 .auth-tab {
     flex: 1;
-    padding: 15px;
+    padding: 12px;
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    transition: var(--transition);
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,63 +161,45 @@
 
 .auth-tab.active {
     color: var(--primary-color);
-    background-color: var(--dark-bg-lighter);
-}
-
-.auth-tab.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--bg-lighter);
 }
 
 .auth-form {
     display: none;
-    animation: fadeIn 0.3s ease;
 }
 
 .auth-form.active {
     display: block;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.auth-form .form-group {
+    margin-bottom: 15px;
 }
 
-.form-group label {
+.auth-form .form-group label {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 13px;
 }
 
-.form-group input {
+.auth-form .form-group input {
     width: 100%;
-    padding: 12px 15px;
-    background-color: var(--dark-bg);
+    padding: 10px 12px;
+    background-color: var(--bg);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     color: var(--text-primary);
-    font-size: 16px;
-    transition: var(--transition);
+    font-size: 14px;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.1);
-}
-
-.form-options {
+.auth-form .form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -287,126 +209,72 @@
     align-items: center;
     gap: 8px;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
 }
 
 .checkbox-label input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--primary-color);
+    width: 14px;
+    height: 14px;
 }
 
 .forgot-password {
     color: var(--primary-color);
     text-decoration: none;
-    font-size: 14px;
-    transition: var(--transition);
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
+    font-size: 13px;
 }
 
 .auth-submit-btn {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+    padding: 12px;
+    background-color: var(--primary-color);
     border: none;
     border-radius: var(--border-radius);
-    color: var(--text-primary);
-    font-size: 16px;
+    color: white;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 8px;
 }
 
-.auth-submit-btn:hover {
-    background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(77, 171, 247, 0.3);
+/* Светлая тема для модалок */
+body.light-theme .catalog-modal-content,
+body.light-theme .auth-modal-content {
+    background-color: var(--bg-lighter);
+    border-color: var(--border-color);
 }
 
-.auth-divider {
-    display: flex;
-    align-items: center;
-    margin: 25px 0;
-    color: var(--text-muted);
-    font-size: 14px;
+body.light-theme .catalog-link {
+    background-color: var(--bg);
 }
 
-.auth-divider::before,
-.auth-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: var(--border-color);
+body.light-theme .auth-modal-tabs {
+    background-color: var(--bg);
 }
 
-.auth-divider span {
-    padding: 0 15px;
+body.light-theme .auth-tab.active {
+    background-color: var(--bg-lighter);
 }
 
-.social-auth {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+body.light-theme .auth-form .form-group input {
+    background-color: var(--bg);
 }
 
-.social-btn {
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    background-color: var(--dark-bg);
-    border-radius: var(--border-radius);
-    color: var(--text-secondary);
-    font-size: 14px;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.social-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.social-btn.vk-btn:hover {
-    background-color: #4C75A3;
-    color: white;
-    border-color: #4C75A3;
-}
-
-.social-btn.google-btn:hover {
-    background-color: #DB4437;
-    color: white;
-    border-color: #DB4437;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+/* Адаптивность модалок */
 @media (max-width: 768px) {
     .catalog-modal-content,
     .auth-modal-content {
         width: 95%;
-        padding: 20px;
+        padding: 15px;
         margin: 20px auto;
     }
     
     .catalog-link {
-        padding: 12px 15px;
-        font-size: 15px;
+        padding: 8px 10px;
+        font-size: 13px;
     }
     
     .auth-modal-tabs {
@@ -414,7 +282,7 @@
     }
     
     .auth-tab {
-        padding: 12px;
+        padding: 10px;
     }
     
     .form-options {
@@ -426,14 +294,24 @@
 @media (max-width: 480px) {
     .catalog-modal-header h3,
     .auth-modal-header h3 {
-        font-size: 20px;
+        font-size: 16px;
     }
     
     .catalog-link {
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .auth-tab {
-        font-size: 14px;
+        font-size: 13px;
+    }
+    
+    .auth-form .form-group input {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .auth-submit-btn {
+        padding: 10px;
+        font-size: 13px;
     }
 }
